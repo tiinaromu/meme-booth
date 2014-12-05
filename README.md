@@ -6,8 +6,8 @@ Meme booth is a service for creating and easily sharing "meme pics" based on rea
 
 
 ![Prototype of Meme booth](setupImages/proto.jpg?raw=true)
-![Setting up Meme booth](setupImages/asennus.jpg?raw=true)
-![View from Meme booth](setupImages/empty.jpg?raw=true)
+![Setting up Meme booth](setupImages/asennus.png?raw=true)
+![View from Meme booth](setupImages/empty.png?raw=true)
 
 Meme booth was originally developed for the #snapshot exhibition by the Finnish Museum of Photography. It's easily adaptable for other purposes, such as:
 

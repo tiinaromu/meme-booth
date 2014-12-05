@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.background-black {
+	background-color: #000000;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.selfie-image {
+	width: 350px;
+}

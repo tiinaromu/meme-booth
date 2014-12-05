@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Saved memes</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <meta http-equiv="refresh" content="15" />
+  </head>
+  <body>
+    {{#images}}
+    <img class="selfie-image"  src="{{ url }}">
+    {{/images}}
+  </body>
+</html>

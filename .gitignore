@@ -1,0 +1,7 @@
+.idea/
+npm-debug.log
+node_modules/
+photos/*.png
+newrelic_agent.log
+.env
+

@@ -59,12 +59,14 @@ Technology used
 
 Meme booth was build using node.js with express. The metadata of the images is saved to mongodb. In the frontend side bacon.js, hogan and webcam.js should be mentioned. The images taken will be saved to Amazons S3. In our setup, the software was pushed to [Heroku](https://www.heroku.com/) and as a database we had the Heroku add-on [mongolab](https://mongolab.com/).
 
-SW setup instructions
----------------------
+Installation instructions
+-------------------------
 
 #### Installations
 
-You need to have [Node.js](http://nodejs.org/) and [git](http://git-scm.com/) installed on your local machine.
+You need to have [git](http://git-scm.com/) installed.
+
+If you want to run meme booth on your local machine, you need to install [Node.js](http://nodejs.org/).
 
 #### GitHub
 

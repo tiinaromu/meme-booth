@@ -42,7 +42,12 @@ module.exports = function(db) {
 		var collection = db.get('photocollection');
 		collection.find({},{}, function(e, docs){
 			_(docs).reverse();
-			res.send(JSON.stringify(docs));
+			var body = JSON.stringify(docs);
+			res.writeHead(200, {
+				"Content-Length": body.length,
+				"Content-Type": "application/json"
+			});
+			res.send(body);
 		});
 	};
 

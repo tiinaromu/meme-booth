@@ -13,7 +13,8 @@ var env = require('../env');
 var client = knox.createClient({
 	key: env.KNOX_KEY,
 	secret: env.KNOX_SECRET,
-	bucket: env.KNOX_BUCKET
+	bucket: env.KNOX_BUCKET,
+	region: env.KNOX_REGION
 });
 
 // Few safety precaucions
@@ -94,7 +95,7 @@ function saveToS3(reqId, buffer, fileName) {
 	   		deferred.reject(err);
 	   		return;
 	   	}
-	   	
+
 	   	if (200 !== res.statusCode) {
 			deferred.reject(new Error('Status code 200 != ' + status));
 		}

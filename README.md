@@ -113,6 +113,7 @@ You have to set three environment variables for your application:
 - `KNOX_KEY`: S3 key
 - `KNOX_SECRET`: S3 secret
 - `KNOX_BUCKET`: Bucket's name, which was created previously
+  `KNOX_REGION`: Region name (if not us-standard-1)
 
 #### Twitter
 
@@ -152,7 +153,7 @@ Then you can run the application with the command:
 
 If you have followed the heroku options in the instruction, you should have everything set up correctly. Now you can deploy the application with the command: `git push heroku master`.
 
-You will still have to increase your Heroku dynos so that the application will run. You can change the amount of dynos from your Heroku applications dahsboard easily or by running the command: `heroku ps:scale web=1`.
+You will still have to increase your Heroku dynos so that the application will run. You can change the amount of dynos from your Heroku applications dashboard easily or by running the command: `heroku ps:scale web=1`.
 
 The URL's for the site:
 

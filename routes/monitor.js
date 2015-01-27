@@ -1,3 +1,3 @@
 exports.index = function(req, res){
-    res.json({ statusCode: 200 });
+  res.json({ statusCode: 200 });
 };

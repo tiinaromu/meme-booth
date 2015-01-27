@@ -18,7 +18,8 @@ var env = require('../env');
 var client = knox.createClient({
 	key: env.KNOX_KEY,
 	secret: env.KNOX_SECRET,
-	bucket: env.KNOX_BUCKET
+	bucket: env.KNOX_BUCKET,
+	region: env.KNOX_REGION
 });
 
 // var stat = whennode.lift(fs.stat);
@@ -58,7 +59,7 @@ module.exports = function(db) {
 			} else {
 				console.log('oh snap, error ocurred');
 			}
-		});		
+		});
 	};
 
 	exports.takesnapshot = function(req, res) {
@@ -112,7 +113,7 @@ function saveImageToS3(reqId, buffer, fileName) {
 			console.error(reqId, 'ERR failed to put to buffer');
 			deferred.reject(new Error('Save to S3 failed'));
 		}
-	}); 
+	});
 
 	return deferred.promise;
 }

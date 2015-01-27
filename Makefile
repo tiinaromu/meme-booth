@@ -6,7 +6,7 @@ all : test
 
 test : jshint
 
-jshint : 
+jshint :
 	$(JSHINT) app.js env.js routes views
 
 run :

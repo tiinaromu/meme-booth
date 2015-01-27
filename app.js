@@ -5,7 +5,7 @@ var path = require('path');
 
 var env = require('./env.js');
 _.each(env, function (value, key) {
-	console.info('env ' + key + ': ' + value);
+  console.info('env ' + key + ': ' + value);
 });
 
 // Mongo db setup
@@ -15,10 +15,10 @@ var db = monk(env.MONGODB);
 // HTTP basic auth setup
 var auth = require('http-auth');
 var basic = auth.basic({
-    realm: 'Snapshot'
-    }, function(username, password, callback) {
-        callback(username === env.USERNAME && password === env.PASSWORD);
-    }
+  realm: 'Snapshot'
+  }, function(username, password, callback) {
+    callback(username === env.USERNAME && password === env.PASSWORD);
+  }
 );
 
 var favicon = require('static-favicon');
@@ -62,9 +62,9 @@ app.get('/memes', selfie.showmemes(db));
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 /// error handlers
@@ -72,21 +72,21 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+  app.use(function(err, req, res, next) {
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
 

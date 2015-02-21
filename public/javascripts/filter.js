@@ -1,4 +1,6 @@
 $(function() {
+  'use strict';
+
   var baseWidth = $('#camera').width();
   var baseHeight = $('#camera').height();
 
@@ -262,12 +264,12 @@ $(function() {
 
   var $leftArrows = $(window).asEventStream('keydown').filter($isFirstStep).filter(function (e) {
     return e.keyCode === 37;
-  }).debounceImmediate(400); 
+  }).debounceImmediate(400);
 
   var $rightArrows = $(window).asEventStream('keydown').filter($isFirstStep).filter(function (e) {
     return e.keyCode === 39;
   }).debounceImmediate(400);
- 
+
   // ota mukaan "ota kuva"
   var $photos = $spaces.filter($isFirstStep).map(function () {
     return Webcam.snap();

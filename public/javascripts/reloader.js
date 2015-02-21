@@ -1,4 +1,5 @@
 (function($) {
+"use strict";
     var serverNotResponding = false;
 
     setInterval(doTheCheck, 120000); // Every two minutes

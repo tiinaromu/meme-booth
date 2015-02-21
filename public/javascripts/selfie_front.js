@@ -1,3 +1,4 @@
+"use strict";
 
 var width = 460;
 var height = 460;

@@ -1,6 +1,5 @@
-"use strict";
 $(document).ready(function(){
-
+"use strict";
   var container = $("#container"),
     li = container.find("li");
 

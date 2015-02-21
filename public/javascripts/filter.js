@@ -1,6 +1,6 @@
-"use strict";
-
 $(function() {
+  'use strict';
+
   var baseWidth = $('#camera').width();
   var baseHeight = $('#camera').height();
 

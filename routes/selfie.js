@@ -1,4 +1,5 @@
 'use strict';
+
 var PHOTOSDATADIR = require('../env').PHOTOSDATADIR;
 var photoUtil = require('../lib/photo-util');
 var XDate = require('xdate');

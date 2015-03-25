@@ -1,9 +1,8 @@
 'use strict';
-var _ = require('lodash');
 
+var _ = require('lodash');
 var express = require('express');
 var path = require('path');
-
 var env = require('./env.js');
 _.each(env, function (value, key) {
   console.info('env ' + key + ': ' + value);

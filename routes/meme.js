@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var PHOTOSDATADIR = require('../env').PHOTOSDATADIR;
 var photoUtil = require('../lib/photo-util');
@@ -20,20 +20,20 @@ module.exports = function(db) {
   };
 
   exports.showmemes = function(req, res) {
-    var collection = db.get("photocollection");
-    collection.find({location: "M"}, function(e, docs){
+    var collection = db.get('photocollection');
+    collection.find({location: 'M'}, function(e, docs){
 
       if(docs) {
         _(docs).reverse();
-        res.render("memes", { "images": _.take(docs, 20)});
+        res.render('memes', { 'images': _.take(docs, 20)});
       } else {
-        res.render("memes", { "images": []});
+        res.render('memes', { 'images': []});
       }
     });
   };
 
   exports.takememeshot = function(req, res) {
-    var reqId = _.uniqueId("meme");
+    var reqId = _.uniqueId('meme');
     try {
 
       var string = req.body.data;
@@ -43,11 +43,11 @@ module.exports = function(db) {
       var matches = string.match(regex);
       var ext = matches[1];
       var data = matches[2];
-      var buffer = new Buffer(data, "base64");
+      var buffer = new Buffer(data, 'base64');
       var now = new XDate();
-      var timeAsISO = now.toISOString().replace(/[:\-]/g, "");
-      var id = "M" + timeAsISO + "-" + _.uniqueId();
-      var fileName = id + "." + ext;
+      var timeAsISO = now.toISOString().replace(/[:\-]/g, '');
+      var id = 'M' + timeAsISO + '-' + _.uniqueId();
+      var fileName = id + '.' + ext;
 
       // save file to S3
       photoUtil.saveImageToS3(reqId, buffer, fileName)
@@ -58,24 +58,24 @@ module.exports = function(db) {
           return photoUtil.saveToDB(reqId, db, id, timeAsISO, ext, twitterUrl, 'M');
         })
         .catch(function (err) {
-          console.error(reqId, "ERROR", err);
+          console.error(reqId, 'ERROR', err);
           res.status(500).json({
-            error: "" + err
+            error: '' + err
           });
         })
         .done(function () {
           res.json({});
         });
     } catch (err) {
-      console.error("ERROR", err);
+      console.error('ERROR', err);
       res.json(500).json({
-        error: "" + err
+        error: '' + err
       });
     }
   };
 
   exports.showfilter = function(req, res) {
-    res.render("meme", { title: "Filter", img: imageURI });
+    res.render('meme', { title: 'Filter', img: imageURI });
   };
 
   return exports;

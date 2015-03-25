@@ -7,7 +7,7 @@ all : test
 test : jshint
 
 jshint :
-	$(JSHINT) app.js env.js routes views
+	$(JSHINT) app.js env.js routes
 
 run :
 	npm start

@@ -35,7 +35,6 @@ module.exports = function(db) {
   exports.takememeshot = function(req, res) {
     var reqId = _.uniqueId('meme');
     try {
-
       var string = req.body.data;
       //Maybe not the right way to do this?
       imageURI = string;
